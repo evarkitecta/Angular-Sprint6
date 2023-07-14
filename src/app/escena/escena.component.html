@@ -1,1 +1,8 @@
-<p *ngFor="let phrase of phrasesEscena" [ngClass]="'phraseEscena'">{{phrase.text}} </p>
+<div class="container">
+  <div class="d-flex mt-3">
+    <button class="btn btnsEscena flex-fill ms-2 me-1 fs-4" type="button" (click)="prev()">Anterior</button>
+    <button class="btn btnsEscena flex-fill me-2 ms-1 fs-4" type="button" (click)="next()">Següent</button>
+  </div>
+  <p *ngFor="let phrase of phrasesEscena; let i=index" class="phraseEscena mx-2"
+    [ngClass]="{'current': i === currentSentence}">{{phrase.text}} </p>
+</div>

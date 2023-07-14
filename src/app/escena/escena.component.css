@@ -5,3 +5,13 @@
   padding: 0.5rem 1rem;
   text-align: center;
 }
+.phraseEscena.current{
+  background-color: rgb(245, 213, 108);
+}
+
+.btnsEscena{
+  background-color: rgb(224, 223, 223);
+  height: 5rem;
+  border: solid grey 1px;
+  border-radius: 0.3rem;;
+}
