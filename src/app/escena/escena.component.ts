@@ -8,23 +8,29 @@ import { Phrase } from '../home/interfaces/phrase.interface';
 })
 export class EscenaComponent {
 
-  //Con @Input le indicamos que el atributo phrasesEscena recibirá datos de otros componentes
+  //Con @Input le indicamos que el atributo phrasesEscena recibirá datos tipo Phrase[] de otros componentes
   @Input()
   public phrasesEscena: Phrase[] = [];
   public currentSentence: number = 0;
-  public activeSeguent: boolean = true;
+  // public currentImage: string = '../../assets/images/' + this.phrasesEscena[this.currentSentence].img;//¿Por qué no funciona aquí la ruta si en la linea 34 está funcionando?"
+  public currentImage: string = '../../assets/images/1.jpg'; // Ruta de la imagen inicial
 
-  prev() {
-    this.currentSentence--;
-    if (this.currentSentence < 0) {
-      this.currentSentence = 0;
+  prev(): void {
+    if (this.currentSentence > 0) {
+      this.currentSentence--;
     }
+    this.updateCurrentImage(); // Actualizar la imagen de fondo al cambiar la frase
   }
 
-  next() {
-    this.currentSentence++;
-    if (this.currentSentence >= this.phrasesEscena.length) {
-      this.currentSentence = this.phrasesEscena.length - 1;
+  next(): void {
+    if (this.currentSentence < this.phrasesEscena.length - 1) {
+      this.currentSentence++;
     }
+    this.updateCurrentImage(); // Actualizar la imagen de fondo al cambiar la frase
+  }
+
+  updateCurrentImage(): void {
+    // Obtener la ruta de la imagen actual en función de la frase actual
+    this.currentImage = '../../assets/images/' + this.phrasesEscena[this.currentSentence].img;
   }
 }

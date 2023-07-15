@@ -1,8 +1,11 @@
-<div class="container-fluid vh-100 escenaBackground">
+<div class="container-fluid vh-100 escenaBackground" [style.backgroundImage]="'url(' + currentImage + ')'">
   <div class="p-3">
     <button class="btn btnsEscena col-6 fs-4" type="button" (click)="prev()">Anterior</button>
     <button class="btn btnsEscena col-6 fs-4" type="button" (click)="next()">Següent</button>
-    <p *ngFor="let phrase of phrasesEscena; let i=index" class="phraseEscena mx-2 "
-      [ngClass]="{'current': i === currentSentence}">{{phrase.text}} </p>
+    <p *ngFor="let phrase of phrasesEscena; let i=index" class="phraseEscena mx-2"
+      [ngClass]="{'current': i === currentSentence}">
+      {{phrase.text}}
+    </p>
+
   </div>
 </div>
