@@ -1,0 +1,28 @@
+.background-home{
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(45deg,rgba(214, 19, 19, 0.8), rgba(65, 53, 240, 0.8),rgba(39, 131, 11, 0.8), rgba(119, 119, 119, 0.8));
+  background-size: 300% ;
+  position: relative;
+  animation: changeBg 5s infinite;
+}
+.text-home{
+  color: rgb(37, 37, 43);
+}
+
+.page-intro{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn-emoji{
+  font-family: "Arial Unicode MS", "Noto Emoji", sans-serif;
+/* font-size: 5rem; */
+}
+
+@keyframes changeBg{
+  0%{background-position: 0 50%}
+  50%{background-position: 100% 50%}
+ 100%{background-position: 0 50%}
+}

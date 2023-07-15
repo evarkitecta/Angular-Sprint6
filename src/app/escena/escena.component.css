@@ -1,17 +1,31 @@
 .phraseEscena{
   border: solid 2px;
   border-radius: 10rem;
-  margin: 1rem;
+  margin: 1rem 5rem;
   padding: 0.5rem 1rem;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: grey;
 }
 .phraseEscena.current{
-  background-color: rgb(245, 213, 108);
+  background-color: rgba(245, 213, 108, 1);
+  color: black;
+  opacity: 1;
 }
 
 .btnsEscena{
-  background-color: rgb(224, 223, 223);
-  height: 5rem;
-  border: solid grey 1px;
-  border-radius: 0.3rem;;
+  background-color: rgba(224, 223, 223, 1);
+  height: 4rem;
+  border: solid rgb(66, 66, 66) 1px;
+  border-radius: 0.3rem;
+  color: black;
+}
+.btnsEscena:hover{
+  background-color:  rgba(245, 213, 108, 1);
+  transform: scale(.99)
+}
+
+.escenaBackground{
+  background-color: rgba(63, 62, 61, 0.7);
+
 }

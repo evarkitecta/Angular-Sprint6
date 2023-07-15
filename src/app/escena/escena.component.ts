@@ -12,18 +12,19 @@ export class EscenaComponent {
   @Input()
   public phrasesEscena: Phrase[] = [];
   public currentSentence: number = 0;
+  public activeSeguent: boolean = true;
 
   prev() {
     this.currentSentence--;
     if (this.currentSentence < 0) {
-      this.currentSentence = this.phrasesEscena.length - 1;
+      this.currentSentence = 0;
     }
   }
 
   next() {
     this.currentSentence++;
     if (this.currentSentence >= this.phrasesEscena.length) {
-      this.currentSentence = 0;
+      this.currentSentence = this.phrasesEscena.length - 1;
     }
   }
 }

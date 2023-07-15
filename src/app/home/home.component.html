@@ -1,2 +1,16 @@
+<!-- Mostraremos esta pantalla si showEscena es falso -->
+<div *ngIf="!showEscena" class="container-fluid background-home">
+  <div class="row d-flex page-intro text-center col-10 justify-content-center">
+    <h1 class="fw-bold col-12 text-home ">Les aventures d'un heroi molt "espacial"</h1>
+    <p class="mt-3 col-md-9 text-gray">Viatja al teu ritme a través de la història del nostre superheroi.<br> Podràs
+      avançar
+      i retrocedir tantes vegades com vulguis. </p>
+    <p class="fw-bold my-2 col-12 text-white">T'atreveixes a volar per l'espai? </p>
+    <button class="btn btn-outline-dark  btn-block w-auto px-3 py-2 my-3 col-12 " type="button"
+      (click)="showEscenaContent()">Començar el viatge
+      <span class="btn-emoji"> 🚀</span></button>
+  </div>
+</div>
 <!-- Indicar que el atributo del hijo "phrasesEscena" va a recibir del padre el atributo con nombre "phrasesHome" -->
-<app-escena [phrasesEscena]="phrasesHome"></app-escena>
+<!-- Mostraremos esta pantalla al hacer click en el botón de "Començar el viatge" y showEscena será verdadero -->
+<app-escena *ngIf="showEscena" [phrasesEscena]="phrasesHome"></app-escena>
