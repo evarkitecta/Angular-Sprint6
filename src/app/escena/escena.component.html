@@ -1,4 +1,5 @@
-<div class="container-fluid vh-100 escenaBackground" [style.backgroundImage]="'url(' + currentImage + ')'">
+<div class="container-fluid vh-100 escenaBackground"
+  [style.backgroundImage]="'url(../../assets/images/' + phrasesEscena[currentSentence].img + ')'">
   <div class="p-3">
     <button class="btn btnsEscena col-6 fs-4" type="button" (click)="prev()">Anterior</button>
     <button class="btn btnsEscena col-6 fs-4" type="button" (click)="next()">Següent</button>
@@ -6,6 +7,5 @@
       [ngClass]="{'current': i === currentSentence}">
       {{phrase.text}}
     </p>
-
   </div>
 </div>
