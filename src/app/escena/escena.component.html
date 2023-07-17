@@ -1,8 +1,10 @@
 <div class="container-fluid vh-100 escenaBackground"
   [style.backgroundImage]="'url(../../assets/images/' + phrasesEscena[currentSentence].img + ')'">
   <div class="p-3">
-    <button class="btn btnsEscena col-6 fs-4" type="button" (click)="prev()">Anterior</button>
-    <button class="btn btnsEscena col-6 fs-4" type="button" (click)="next()">Següent</button>
+    <button [disabled]="currentSentence == 0" class="btn btnsEscena col-6 fs-4" type="button"
+      (click)="prev()">Anterior</button>
+    <button [disabled]="currentSentence == phrasesEscena.length - 1" class="btn btnsEscena col-6 fs-4" type="button"
+      (click)="next()">Següent</button>
     <p *ngFor="let phrase of phrasesEscena; let i=index" class="phraseEscena mx-2"
       [ngClass]="{'current': i === currentSentence}">
       {{phrase.text}}
